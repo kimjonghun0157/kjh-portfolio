@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 const navItems = [
   { label: "프로필", href: "#resume" },
   { label: "경력", href: "#experience" },
-  { label: "프로젝트", href: "#projects" },
   { label: "기술", href: "#skills" },
+  { label: "프로젝트", href: "#projects" },
 ];
 
 export default function Header() {
@@ -20,41 +20,41 @@ export default function Header() {
 
   return (
     <header
-      className={`no-print sticky top-0 z-50 transition-all duration-300 ${
+      className={`no-print sticky top-4 z-50 mx-auto w-[min(960px,calc(100%-1.5rem))] transition-all duration-300 md:w-[min(960px,calc(100%-2rem))] ${
         scrolled
-          ? "border-b border-border bg-surface/80 backdrop-blur-md"
+          ? "glass-panel rounded-full"
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-[860px] items-center justify-between px-6 py-4 md:px-8">
-        {/* 로고 / 이름 */}
+      <div className="flex items-center justify-between gap-4 px-4 py-3 md:px-5">
         <a
           href="#"
-          className="text-lg font-bold tracking-tight text-ink transition-colors hover:text-accent"
+          className="flex min-w-0 items-center gap-3 transition-colors hover:text-accent"
         >
-          홍길동
+          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-border/80 bg-white/60 text-sm font-semibold text-accent shadow-sm">
+            KJH
+          </span>
+          <span className="min-w-0">
+            <span className="block truncate text-sm font-semibold uppercase tracking-[0.24em] text-ink-light">
+              Portfolio
+            </span>
+            <span className="block truncate text-base font-semibold tracking-tight text-ink">
+              김종훈
+            </span>
+          </span>
         </a>
 
-        {/* 네비게이션 */}
-        <nav className="flex items-center gap-1">
+        <nav className="flex items-center gap-1 overflow-x-auto rounded-full border border-border/70 bg-white/50 p-1 backdrop-blur md:overflow-visible">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-1.5 text-sm text-ink-muted transition-colors hover:bg-surface-alt hover:text-ink"
+              className="whitespace-nowrap rounded-full px-3 py-2 text-sm text-ink-muted transition-all hover:bg-white hover:text-ink hover:shadow-sm"
             >
               {item.label}
             </a>
           ))}
 
-          {/* PDF 다운로드 / 인쇄 버튼 */}
-          <button
-            onClick={() => window.print()}
-            className="ml-3 rounded-md border border-border px-3 py-1.5 text-sm text-ink-muted transition-colors hover:border-accent hover:text-accent"
-            aria-label="이력서 인쇄"
-          >
-            인쇄
-          </button>
         </nav>
       </div>
     </header>

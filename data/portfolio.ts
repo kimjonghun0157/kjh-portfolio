@@ -3,136 +3,182 @@
 // ============================================================
 
 export const profile = {
-  name: "홍길동",
-  nameEn: "Gildong Hong",
-  title: "프론트엔드 개발자",
-  tagline: "사용자 경험을 최우선으로 생각하는 개발자",
-  email: "gildong@example.com",
-  phone: "+82 10-1234-5678",
-  location: "서울특별시 강남구",
-  github: "https://github.com/your-github",
-  linkedin: "https://linkedin.com/in/your-linkedin",
-  blog: "https://velog.io/@your-velog",
-  bio: `고객의 불편을 해결하는 제품을 만들고, 그 과정에서 얻은 기술을
-다른 사람과 공유하면서 '왜 이 제품이 존재하는지' 끊임없이 질문합니다.`,
+  name: "김종훈",
+  nameEn: "Jonghun Kim",
+  title: "백엔드 개발자",
+  email: "whdgns4288@naver.com",
+  phone: "+82 010-8006-4288",
+  location: "서울특별시 금천구 독산동",
+  github: "https://github.com/kimjonghun0157",
+  linkedin: "",
+  blog: "",
+  birth: "1996.09.29",
+  gender: "남자",
+  nationality: "한국인",
+  military: "군필(육군 병장 만기전역)",
+  hobbies: "자전거, 달리기",
+  bio: `사용자가 편리함을 느끼는 제품을 구현하는데 노력하고, 그 과정에서 얻은 엔지니어링 기술을 다른 사람과 공유하면서 '제품과 기술이 왜 존재하는지' 계속 질문합니다.`,
 };
 
 export const experience = [
   {
-    company: "ABC 테크",
+    company: "우성 오토콘",
     companyUrl: "https://example.com",
-    role: "Frontend Engineer",
-    team: "Web Platform Team (8명)",
-    period: "2023.06 ~ 현재",
+    role: "백엔드 엔지니어",
+    period: "2023.03 ~ 현재",
     isCurrent: true,
     description:
-      "월간 활성 사용자 500만 명의 B2C 플랫폼 웹 프론트엔드 개발 및 유지보수",
-    techStack: ["React.js", "Next.js", "TypeScript", "GraphQL", "Tailwind CSS"],
+      "MES 및 ERP 시스템 개발과 유지보수, 스마트 팩토리 설비 제어 서버 개발을 담당",
+    techStack: ["Spring Boot", "Java", "JPA", "MySQL", "Kafka"],
     achievements: [
       {
-        title: "웹 성능 최적화",
+        title: "COFAS Pallet Inserter System Server 개발",
         description:
-          "Core Web Vitals 개선으로 LCP 3.2초 → 1.8초, CLS 0.25 → 0.05로 개선하여 SEO 순위 상승 및 이탈률 15% 감소에 기여",
+          "Pallet Inserter 및 물류 이송 라인을 통합 제어하는 실시간 설비 제어 서버를 설계 및 개발하고, 러시아 현장에 약 1억 원 규모로 상용 납품",
       },
       {
-        title: "디자인 시스템 구축",
+        title: "WSA MES/ERP 개발 및 유지보수",
         description:
-          "Storybook 기반의 공통 컴포넌트 라이브러리를 설계·구축하여 디자이너-개발자 간 커뮤니케이션 비용을 40% 절감하고, 신규 페이지 개발 속도를 2배 향상",
+          "생산·재고·구매 도메인 중심 MES/ERP 시스템의 기능 개발과 유지보수를 수행하며 운영 안정성과 업무 효율 향상에 기여",
       },
       {
-        title: "A/B 테스트 인프라 도입",
+        title: "자사 MES/ERP 서비스 MSA 전환",
         description:
-          "Feature Flag 시스템을 도입하여 5만 명 대상 A/B 테스트를 3건 진행, 결제 전환율 8% 상승한 UI를 데이터 기반으로 선정",
-      },
-    ],
-  },
-  {
-    company: "XYZ 스타트업",
-    companyUrl: "https://example.com",
-    role: "Frontend Developer",
-    team: "Product Team (5명)",
-    period: "2022.01 ~ 2023.05",
-    isCurrent: false,
-    description: "초기 스타트업에서 MVP부터 정식 출시까지 프론트엔드 전담 개발",
-    techStack: ["React.js", "Redux", "Styled Components", "Firebase"],
-    achievements: [
-      {
-        title: "MVP 출시 및 고객 확보",
-        description:
-          "3개월 만에 MVP를 출시하고, 출시 6개월 내 MAU 1만 명 달성",
-      },
-      {
-        title: "CI/CD 파이프라인 구축",
-        description:
-          "GitHub Actions 기반 CI/CD를 구축하여 배포 시간을 30분 → 5분으로 단축",
+          "기존 자사 MES/ERP 서비스를 MSA 구조로 전환하며 서비스 간 경계를 재정의하고 확장성과 운영 효율 개선에 기여",
       },
     ],
   },
 ];
 
-export const projects = [
+export const companyProjects = [
   {
-    title: "개인 포트폴리오",
-    period: "2024.01 ~ 현재",
-    teamSize: "1명 (본인)",
+    title: "COFAS Pallet Inserter System Server",
+    period: "2023.07 ~ 2023.10",
+    teamSize: "서버 개발",
     description:
-      "Next.js와 Tailwind CSS로 제작한 개인 이력서/포트폴리오 사이트. 다국어 지원, 다크모드, 인쇄 최적화를 목표로 개발",
-    techStack: ["Next.js", "Tailwind CSS", "TypeScript", "Vercel"],
+      "스마트 팩토리 환경에서 Pallet Inserter, Conveyor, Robot Stopper Arm, Pusher를 통합 제어하는 실시간 설비 제어 서버 개발",
+    techStack: ["Java 8", "Spring Boot 2.6.7", "Maven", "OMRON FINS", "TCP/IP"],
     links: {
-      github: "https://github.com/your-github/portfolio",
-      live: "https://your-portfolio.vercel.app",
+      github: "",
+      live: "",
     },
     highlights: [
-      "SSG를 활용한 정적 사이트 빌드로 빠른 로딩 속도 확보",
-      "CSS @media print를 활용한 인쇄용 스타일 최적화",
+      "PLC 통신 계층과 공정 제어 계층을 분리해 안정성과 유지보수성 확보",
+      "상태 머신 기반 Control Runner 구조로 설비별 제어 로직 표준화",
+      "러시아 수출 프로젝트에 적용되어 약 1억 원 규모로 상용 납품",
     ],
   },
   {
-    title: "실시간 채팅 앱",
-    period: "2023.08 ~ 2023.11",
-    teamSize: "2명",
+    title: "WSA MES/ERP 개발",
+    period: "2024.03 ~ 2024.12",
+    teamSize: "백엔드 개발",
     description:
-      "WebSocket 기반 실시간 채팅 애플리케이션. 1:1 채팅, 그룹 채팅, 이미지 전송 지원",
+      "생산, 재고, 구매 도메인을 포함한 MES/ERP 시스템 개발과 구조 개선을 수행하며 운영 시스템을 고도화",
     techStack: [
-      "React.js",
-      "Socket.io",
-      "Node.js",
-      "PostgreSQL",
-      "Docker",
-      "GCP Cloud Run",
+      "Java 21",
+      "Spring Boot 3.2",
+      "JPA",
+      "Querydsl",
+      "MySQL",
+      "Kafka",
     ],
     links: {
-      github: "https://github.com/your-github/chat-app",
+      github: "",
+      live: "",
     },
     highlights: [
-      "Socket.io를 활용한 실시간 양방향 통신 구현",
-      "Docker 컨테이너화 및 GCP Cloud Run 배포",
+      "생산 관리 ERP 시스템에서 프로젝트·아이템·공정 생산 흐름을 설계하고, Command/Query 분리 구조로 API를 구현하여 유지보수성과 확장성을 개선",
+      "Querydsl 기반 동적 조회 구조와 DTO 중심 API 구조로 레거시 코드 개선",
+      "재고 처리 로직을 afterCommit 이벤트 방식으로 분리해 동시성 안정성 확보",
     ],
   },
   {
-    title: "가격 추적 알리미",
-    period: "2023.03 ~ 2023.06",
-    teamSize: "1명 (본인)",
+    title: "WSA MSA 인프라 전환",
+    period: "2025.02 ~ 2025.09",
+    teamSize: "아키텍처 및 공통 인프라 개발",
     description:
-      "쇼핑몰 상품 가격 변동을 추적하여 목표 가격 도달 시 웹 푸시 알림을 보내는 서비스",
-    techStack: ["Next.js", "PWA", "Web Push", "Puppeteer", "PostgreSQL"],
+      "기존 자사 MES/ERP 서비스를 MSA 구조로 전환하며 Gateway, Auth, EMS, LMS 및 공통 인프라를 구축",
+    techStack: [
+      "Java 21/25",
+      "Spring Boot 3.x/4.x",
+      "Redis",
+      "Consul",
+      "Kafka",
+      "Docker Compose",
+    ],
     links: {
-      github: "https://github.com/your-github/price-tracker",
-      live: "https://price-tracker.vercel.app",
+      github: "",
+      live: "",
     },
     highlights: [
-      "Puppeteer를 활용한 주기적 크롤링 및 가격 변동 감지",
-      "PWA + Web Push API로 모바일 알림 기능 구현",
+      "Outbox + Kafka Connect CDC 기반 서비스 간 데이터 동기화 구조 구축",
+      "Gateway 전역 인증 필터와 동적 라우팅으로 공통 진입 정책 표준화",
+      "GitHub Actions와 Docker Compose 기반 배포 자동화로 신규 서비스 온보딩 비용 절감",
+    ],
+  },
+];
+
+export const personalProjects = [
+  {
+    title: "POUG",
+    period: "2022.03 ~ 2022.04",
+    teamSize: "팀 프로젝트 · 백엔드 개발",
+    description:
+      "GitHub 기반으로 개발자 포트폴리오와 프로젝트를 작성·공유할 수 있는 서비스의 백엔드 개발에 참여하며, 카카오 로그인, 북마크, 프로젝트 API와 배포 자동화를 담당",
+    techStack: [
+      "Java",
+      "Spring Boot",
+      "Spring Security",
+      "JWT",
+      "JPA",
+      "Querydsl",
+      "MySQL",
+      "AWS EC2",
+      "Nginx",
+      "GitHub Actions",
+    ],
+    links: {
+      github: "https://github.com/h99-final/one-page-resume-BE",
+      live: "https://poug.me/",
+    },
+    highlights: [
+      "카카오 로그인 API와 북마크, 프로젝트 관련 API를 구현해 사용자 인증 흐름과 핵심 기능 개발에 기여",
+      "GitHub Actions, Nginx, HTTPS 구성을 바탕으로 무중단 배포 환경을 구축해 운영 안정성을 개선",
+      "팀 프로젝트 환경에서 백엔드 기능 개발과 배포 자동화를 함께 맡아 서비스 완성도와 운영 효율을 높임",
+    ],
+  },
+  {
+    title: "PickBit",
+    period: "기간 업데이트 예정",
+    teamSize: "개인 프로젝트",
+    description:
+      "입찰과 실시간 경쟁 경험에 초점을 맞춘 경매 플랫폼을 직접 설계하고 개발하며, 여러 사용자가 동시에 참여하는 환경에서도 안정적으로 동작할 수 있도록 상품 등록부터 경매 진행, 낙찰 흐름까지 구현",
+    techStack: [
+      "Java",
+      "Spring Boot",
+      "JPA",
+      "MySQL",
+      "Redis",
+      "WebSocket",
+    ],
+    links: {
+      github: "https://github.com/pickbit-dev",
+      live: "",
+    },
+    highlights: [
+      "상품 등록, 경매 생성, 입찰, 낙찰 처리까지 이어지는 핵심 경매 흐름을 서비스 관점에서 설계",
+      "실시간 입찰 상태 변화와 사용자 상호작용을 고려해 많은 사용자가 동시에 참여할 수 있는 경매 진행 경험을 구현",
+      "동시 입찰 상황에서도 정합성이 깨지지 않도록 동시성 문제를 고려해 안정적으로 처리되도록 설계",
     ],
   },
 ];
 
 export const education = [
   {
-    name: "중앙대학교",
-    major: "컴퓨터공학부 공학사",
-    period: "2017.03 ~ 2022.02",
-    note: "전체 학점: 4.1 / 4.5",
+    name: "백석대학교",
+    major: "컴퓨터공학부 학사",
+    period: "2015.03 ~ 2021.02",
+    note: "전체 학점: 3.7 / 4.5",
   },
 ];
 
@@ -151,9 +197,8 @@ export const certificates = [
 ];
 
 export const skills = {
-  Languages: ["TypeScript", "JavaScript", "CSS3", "Python", "SQL"],
-  Frontend: ["React.js", "Next.js", "Tailwind CSS", "Zustand", "React Query"],
-  Backend: ["Node.js", "Express", "PostgreSQL", "Redis", "Docker"],
-  Cloud: ["Vercel", "AWS (EC2, S3, RDS)", "GCP (Cloud Run)", "Cloudflare"],
-  DevOps: ["GitHub Actions", "Docker", "Sentry", "Google Analytics"],
+  Languages: ["Java", "SQL", "Kotlin"],
+  Backend: ["Spring Boot", "JPA", "Querydsl", "MySQL", "Kafka", "MongoDB", "Redis", "Elasticsearch"],
+  Infra: ["Consul", "Docker Compose", "GitHub Actions", "Flyway"],
+  Cloud: ["AWS", "Supabase"],
 };

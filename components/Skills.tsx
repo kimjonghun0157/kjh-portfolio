@@ -7,17 +7,17 @@ export default function Skills() {
         기술 스택
       </h3>
 
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="print-skills-grid grid gap-6 sm:grid-cols-2">
         {Object.entries(skills).map(([category, items]) => (
-          <div key={category}>
-            <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-ink-light">
+          <div key={category} className="soft-card print-avoid rounded-[1.5rem] p-5 md:p-6">
+            <h4 className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-ink-light">
               {category}
             </h4>
             <div className="flex flex-wrap gap-1.5">
               {items.map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-md border border-border px-2.5 py-1 text-xs font-medium text-ink-muted transition-colors hover:border-accent hover:text-accent"
+                  className="warm-chip rounded-full px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.16em] text-ink-muted transition-colors hover:border-accent hover:text-accent"
                 >
                   {skill}
                 </span>

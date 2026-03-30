@@ -1,7 +1,6 @@
 # 📄 포트폴리오 — Next.js + Tailwind CSS
 
-개인 이력서/포트폴리오 웹사이트 프로젝트입니다.  
-[gwak2837.vercel.app](https://gwak2837.vercel.app/ko) 스타일을 참고하여 제작되었습니다.
+개인 이력서/포트폴리오 웹사이트 프로젝트입니다.
 
 ## 🚀 시작하기
 
@@ -78,7 +77,7 @@ portfolio/
 3. 자동 빌드 & 배포 완료!
 
 > Vercel 배포 시 `next.config.ts`에서 `output: "export"`와
-> `images: { unoptimized: true }`를 제거하면  
+> `images: { unoptimized: true }`를 제거하면
 > `next/image` 최적화와 ISR 등 Next.js의 모든 기능을 활용할 수 있습니다.
 
 ### 기타 (Netlify, GitHub Pages 등)
@@ -93,12 +92,12 @@ npm run build
 
 ## ✨ 추가 기능 아이디어
 
-- [ ] 다크모드 토글
-- [ ] 다국어 지원 (i18n)
-- [ ] 프로젝트 이미지 갤러리
-- [ ] 블로그 연동 (MDX)
-- [ ] 방문자 수 표시 (Google Analytics)
-- [ ] PDF 자동 생성
+- [ ]  다크모드 토글
+- [ ]  다국어 지원 (i18n)
+- [ ]  프로젝트 이미지 갤러리
+- [ ]  블로그 연동 (MDX)
+- [ ]  방문자 수 표시 (Google Analytics)
+- [ ]  PDF 자동 생성
 
 ## 📄 라이선스
 

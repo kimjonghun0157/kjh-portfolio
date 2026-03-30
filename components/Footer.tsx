@@ -2,10 +2,10 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="no-print border-t border-border">
-      <div className="mx-auto max-w-[860px] px-6 py-8 md:px-8">
-        <div className="flex flex-wrap items-center justify-between gap-4 text-xs text-ink-light">
-          <p>&copy; {year} 홍길동. All rights reserved.</p>
+    <footer className="no-print pb-10 pt-6">
+      <div className="mx-auto max-w-[960px] px-6 md:px-8">
+        <div className="glass-panel flex flex-wrap items-center justify-between gap-4 rounded-[1.75rem] px-6 py-5 text-xs text-ink-light">
+          <p>&copy; {year} 김종훈. Crafted with a warm editorial touch.</p>
           <p>
             Built with{" "}
             <a

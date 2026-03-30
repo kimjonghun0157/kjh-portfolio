@@ -1,38 +1,34 @@
+"use client";
+
 import { profile } from "@/data/portfolio";
 
 export default function Profile() {
   return (
-    <div className="animate-fade-in mb-16">
-      {/* 타이틀 영역 */}
-      <div className="mb-8 border-b border-border pb-8">
-        <p className="mb-3 text-sm font-medium text-accent">{profile.title}</p>
-        <h1 className="mb-1 text-4xl font-black tracking-tight text-ink md:text-5xl">
-          {profile.name}
-        </h1>
-        <p className="text-lg text-ink-muted">{profile.nameEn}</p>
+    <div className="animate-fade-in mb-16 print-profile">
+      <div className="mb-8 border-b border-border/80 pb-8 print-profile-header">
+        <div>
+          <h1 className="section-title mb-4 text-ink">김종훈</h1>
+          <p className="mb-5 text-base font-medium uppercase tracking-[0.24em] text-ink-light print-name-en">
+            {profile.nameEn}
+          </p>
+        </div>
       </div>
 
-      {/* 소개 + 연락처 */}
-      <div className="grid gap-8 md:grid-cols-[2fr_1fr]">
+      <div className="mb-6 print-profile-bio">
         <div>
-          <p className="mb-4 text-base leading-relaxed text-ink-muted">
-            {profile.tagline}
-          </p>
-          <p className="whitespace-pre-line text-sm leading-relaxed text-ink-muted">
+          <p className="whitespace-pre-line text-sm leading-relaxed text-ink-muted md:text-base">
             {profile.bio}
           </p>
         </div>
+      </div>
 
-        <div className="space-y-3 text-sm">
-          <ContactItem label="이메일" href={`mailto:${profile.email}`}>
-            {profile.email}
-          </ContactItem>
-          <ContactItem label="전화" href={`tel:${profile.phone}`}>
-            {profile.phone}
-          </ContactItem>
-          <ContactItem label="거주지">{profile.location}</ContactItem>
+      <div className="soft-card print-avoid mb-8 rounded-[1.5rem] p-5 text-sm md:p-6">
+        <div className="print-contact-heading mb-5 flex flex-wrap items-center justify-between gap-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-ink-light">
+            Contact
+          </p>
 
-          <div className="flex gap-3 pt-2">
+          <div className="print-social-links flex gap-3">
             {profile.github && (
               <SocialLink href={profile.github} label="GitHub">
                 <GitHubIcon />
@@ -50,6 +46,21 @@ export default function Profile() {
             )}
           </div>
         </div>
+
+        <div className="print-contact-grid grid gap-x-6 gap-y-3 md:grid-cols-2 xl:grid-cols-3">
+          <ContactItem label="이메일" href={`mailto:${profile.email}`}>
+            {profile.email}
+          </ContactItem>
+          <ContactItem label="전화" href={`tel:${profile.phone}`}>
+            {profile.phone}
+          </ContactItem>
+          <ContactItem label="생년월일">{profile.birth}</ContactItem>
+          <ContactItem label="성별">{profile.gender}</ContactItem>
+          <ContactItem label="국적">{profile.nationality}</ContactItem>
+          <ContactItem label="병역">{profile.military}</ContactItem>
+          <ContactItem label="취미">{profile.hobbies}</ContactItem>
+          <ContactItem label="거주지">{profile.location}</ContactItem>
+        </div>
       </div>
     </div>
   );
@@ -65,20 +76,20 @@ function ContactItem({
   children: React.ReactNode;
 }) {
   return (
-    <div>
-      <span className="text-xs font-medium uppercase tracking-wider text-ink-light">
+    <div className="print-contact-item grid gap-1.5 rounded-[1rem] border border-border/50 bg-white/35 px-4 py-3 sm:grid-cols-[88px_minmax(0,1fr)] sm:items-start sm:gap-3">
+      <span className="text-xs font-medium uppercase tracking-[0.22em] text-ink-light sm:pt-0.5">
         {label}
       </span>
-      <div className="mt-0.5">
+      <div>
         {href ? (
           <a
             href={href}
-            className="text-ink transition-colors hover:text-accent"
+            className="break-words text-sm font-medium text-ink transition-colors hover:text-accent"
           >
             {children}
           </a>
         ) : (
-          <span className="text-ink">{children}</span>
+          <span className="break-words text-sm font-medium text-ink">{children}</span>
         )}
       </div>
     </div>
@@ -100,7 +111,7 @@ function SocialLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-ink-muted transition-all hover:border-accent hover:text-accent"
+      className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white/60 text-ink-muted transition-all hover:-translate-y-0.5 hover:border-accent hover:bg-accent-surface hover:text-accent"
     >
       {children}
     </a>
