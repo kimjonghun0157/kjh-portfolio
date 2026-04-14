@@ -80,6 +80,17 @@
       color: #9ca3af;
     }
 
+    /* ── Profile Photo ── */
+    .profile-photo {
+      width: 170px;
+      height: 170px;
+      border-radius: 8px;
+      object-fit: cover;
+      object-position: top;
+      border: 2px solid #e8eaf0;
+      flex-shrink: 0;
+    }
+
     /* ── Section common ── */
     section {
       margin-bottom: 36px;
@@ -372,6 +383,9 @@
       body { background: #fff; }
       .page { box-shadow: none; margin: 0; border-radius: 0; padding: 40px 48px; }
 
+      /* 섹션 제목이 페이지 하단에 혼자 남지 않도록 */
+      .section-title        { break-after: avoid; }
+
       /* 요소 내부에서 잘리지 않도록 */
       .project              { break-inside: avoid; }
       .side-card            { break-inside: avoid; }
@@ -392,6 +406,7 @@
 
   <!-- ── Header ── -->
   <header>
+    <img src="img.png" alt="프로필 사진" class="profile-photo" />
     <div class="header-left">
       <h1>김종훈</h1>
       <p class="title">백엔드 엔지니어 · Backend Engineer</p>
@@ -445,7 +460,6 @@
         <span class="chip">Spring Boot</span>
         <span class="chip">Spring Data JPA</span>
         <span class="chip">Spring Batch</span>
-        <span class="chip">Spring Security</span>
       </div>
     </div>
     <div class="skill-group">
@@ -507,7 +521,7 @@
         <span class="badge badge-blue">백엔드 엔지니어</span>
         <span class="badge badge-green">재직 중</span>
       </div>
-      <p class="company-desc">공장 자동화 설비를 개발·구축하는 제조/엔지니어링 회사. 생산 설비와 운영 시스템이 유기적으로 연결되는 환경.</p>
+      <p class="company-desc">공장 자동화 설비를 개발·구축하는 제조/엔지니어링 회사.</p>
 
       <!-- COFAS -->
       <div class="project">
