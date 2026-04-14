@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>김종훈 이력서</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 14px;
+      color: #1a1a2e;
+      background: #f5f6fa;
+      line-height: 1.7;
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 32px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      padding: 52px 56px;
+    }
+
+    /* ── Header ── */
+    header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      padding-bottom: 28px;
+      border-bottom: 2px solid #e8eaf0;
+      margin-bottom: 32px;
+    }
+
+    .header-left h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #0f0f23;
+    }
+
+    .header-left .title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #6b7280;
+      margin-top: 4px;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: flex-end;
+      margin-top: 4px;
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: #4b5563;
+    }
+
+    .contact-list a {
+      color: #4a6cf7;
+      text-decoration: none;
+    }
+    .contact-list a:hover { text-decoration: underline; }
+
+    .contact-list svg {
+      flex-shrink: 0;
+      color: #9ca3af;
+    }
+
+    /* ── Section common ── */
+    section {
+      margin-bottom: 36px;
+    }
+
+    .section-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      color: #9ca3af;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e8eaf0;
+      margin-bottom: 20px;
+    }
+
+    /* ── Summary ── */
+    .summary-text {
+      color: #374151;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .core-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .core-list li {
+      font-size: 0.875rem;
+      color: #374151;
+      padding-left: 14px;
+      position: relative;
+    }
+    .core-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #4a6cf7;
+      font-size: 0.75rem;
+      top: 3px;
+    }
+
+    /* ── Skills ── */
+    .skill-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .skill-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #6b7280;
+      min-width: 90px;
+      padding-top: 3px;
+    }
+    .chip-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .chip {
+      display: inline-block;
+      padding: 3px 10px;
+      background: #f0f2ff;
+      color: #3b4fd9;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+
+    /* ── Company ── */
+    .company-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+    .company-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f0f23;
+    }
+    .company-period {
+      font-size: 0.8rem;
+      color: #6b7280;
+      white-space: nowrap;
+      margin-top: 3px;
+    }
+    .company-desc {
+      font-size: 0.845rem;
+      color: #6b7280;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    /* ── Project card ── */
+    .project {
+      margin-bottom: 28px;
+      padding-left: 16px;
+      border-left: 3px solid #e8eaf0;
+    }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .project-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+    .project-period {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 9px;
+      border-radius: 20px;
+      font-size: 0.73rem;
+      font-weight: 500;
+    }
+    .badge-blue  { background: #eff2ff; color: #4a6cf7; }
+    .badge-gray  { background: #f3f4f6; color: #6b7280; }
+    .badge-green { background: #ecfdf5; color: #059669; }
+
+    .project-overview {
+      font-size: 0.855rem;
+      color: #4b5563;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+
+    .task-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .task-list > li {
+      font-size: 0.855rem;
+      color: #374151;
+    }
+    .task-main {
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 4px;
+    }
+    .sub-list {
+      list-style: none;
+      padding-left: 14px;
+      margin-top: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .sub-list li {
+      font-size: 0.835rem;
+      color: #4b5563;
+      position: relative;
+      padding-left: 12px;
+    }
+    .sub-list li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: #9ca3af;
+    }
+    .sub-sub-list {
+      list-style: none;
+      padding-left: 14px;
+      margin-top: 3px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .sub-sub-list li {
+      font-size: 0.815rem;
+      color: #6b7280;
+      position: relative;
+      padding-left: 12px;
+    }
+    .sub-sub-list li::before {
+      content: '·';
+      position: absolute;
+      left: 2px;
+      color: #d1d5db;
+      font-size: 1rem;
+      top: -1px;
+    }
+
+
+    code {
+      font-family: 'SFMono-Regular', Consolas, monospace;
+      font-size: 0.8em;
+      background: #f3f4f6;
+      padding: 1px 5px;
+      border-radius: 3px;
+      color: #374151;
+    }
+
+    /* ── Education ── */
+    .edu-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .edu-school {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+    .edu-period {
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+    .edu-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    /* ── Side projects ── */
+    .side-grid { display: flex; gap: 16px; flex-wrap: wrap; }
+    .side-card {
+      flex: 1 1 340px;
+      border: 1px solid #e8eaf0;
+      border-radius: 8px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .side-card-top { display: flex; flex-direction: column; gap: 6px; }
+    .side-card-title { font-weight: 700; font-size: 0.95rem; color: #1a1a2e; margin-right: 8px; }
+    .side-card-period { font-size: 0.78rem; color: #9ca3af; }
+    .side-card-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+    .side-card-desc { font-size: 0.855rem; color: #4b5563; }
+    .side-card-tasks {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .side-card-tasks li {
+      font-size: 0.825rem;
+      color: #4b5563;
+      padding-left: 12px;
+      position: relative;
+    }
+    .side-card-tasks li::before { content: '–'; position: absolute; left: 0; color: #9ca3af; }
+    .side-card-footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .side-links { display: flex; gap: 8px; }
+    .side-links a {
+      font-size: 0.78rem;
+      color: #4a6cf7;
+      text-decoration: none;
+      padding: 3px 10px;
+      border: 1px solid #c7d2fe;
+      border-radius: 4px;
+    }
+    .side-links a:hover { background: #eff2ff; }
+
+    /* ── Print ── */
+    @media print {
+      body { background: #fff; }
+      .page { box-shadow: none; margin: 0; border-radius: 0; padding: 40px 48px; }
+
+      /* 요소 내부에서 잘리지 않도록 */
+      .project              { break-inside: avoid; }
+      .side-card            { break-inside: avoid; }
+      .task-list > li       { break-inside: avoid; }
+      .infra-lib-grid > div { break-inside: avoid; }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 28px 24px; margin: 0; border-radius: 0; }
+      header { flex-direction: column; }
+      .contact-list { align-items: flex-start; }
+      .company-header, .project-header, .edu-header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── Header ── -->
+  <header>
+    <div class="header-left">
+      <h1>김종훈</h1>
+      <p class="title">백엔드 엔지니어 · Backend Engineer</p>
+    </div>
+    <ul class="contact-list">
+      <li>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <a href="mailto:whdgns4288@naver.com">whdgns4288@naver.com</a>
+      </li>
+      <li>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+        +82 010-8006-4288
+      </li>
+      <li>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        <a href="https://github.com/kimjonghun0157" target="_blank">github.com/kimjonghun0157</a>
+      </li>
+      <li>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        서울특별시 금천구
+      </li>
+    </ul>
+  </header>
+
+  <!-- ── 소개 ── -->
+  <section id="summary">
+    <p class="section-title">소개</p>
+    <p class="summary-text">
+      운영 환경에서 안정적으로 동작하는 시스템을 설계하는 데 집중하며, 기술적 결정의 배경과 트레이드오프를 팀과 공유하는 백엔드 개발자입니다.<br>
+      B2B ERP 시스템 설계부터 MSA 전환 인프라 구축까지, 시스템 구조와 운영 안정성을 중심에 두고 개발해왔습니다.
+    </p>
+    <ul class="core-list">
+      <li>운영 환경에서 안정적으로 동작하는 자사 ERP 시스템 설계 및 개발</li>
+      <li>MSA 전환 과정에서 Kafka, Outbox/Inbox 패턴 기반 서비스 간 데이터 연동 구조 설계 경험</li>
+      <li>배포 자동화 및 공통 인프라 구축을 통한 운영 효율 개선</li>
+    </ul>
+  </section>
+
+  <!-- ── 기술 스택 ── -->
+  <section id="skills">
+    <p class="section-title">기술 스택</p>
+    <div class="skill-group">
+      <span class="skill-label">Language</span>
+      <div class="chip-wrap">
+        <span class="chip">Java</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <span class="skill-label">Framework</span>
+      <div class="chip-wrap">
+        <span class="chip">Spring Boot</span>
+        <span class="chip">Spring Data JPA</span>
+        <span class="chip">Spring Batch</span>
+        <span class="chip">Spring Security</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <span class="skill-label">Database</span>
+      <div class="chip-wrap">
+        <span class="chip">MySQL</span>
+        <span class="chip">Redis</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <span class="skill-label">ORM / Query</span>
+      <div class="chip-wrap">
+        <span class="chip">QueryDSL</span>
+        <span class="chip">JPA</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <span class="skill-label">Messaging</span>
+      <div class="chip-wrap">
+        <span class="chip">Apache Kafka</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <span class="skill-label">Infrastructure</span>
+      <div class="chip-wrap">
+        <span class="chip">Docker</span>
+        <span class="chip">GitHub Actions</span>
+        <span class="chip">Nginx</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <span class="skill-label">Monitoring</span>
+      <div class="chip-wrap">
+        <span class="chip">Elasticsearch</span>
+        <span class="chip">Logstash</span>
+        <span class="chip">Kibana</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <span class="skill-label">Test</span>
+      <div class="chip-wrap">
+        <span class="chip">JUnit5</span>
+        <span class="chip">TestContainers</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 경력 ── -->
+  <section id="career">
+    <p class="section-title">경력</p>
+
+    <!-- 우성 오토콘 -->
+    <div>
+      <div class="company-header">
+        <span class="company-name">우성 오토콘</span>
+        <span class="company-period">2023.03 ~ 현재</span>
+      </div>
+      <div class="project-meta" style="margin-bottom:8px;">
+        <span class="badge badge-blue">백엔드 엔지니어</span>
+        <span class="badge badge-green">재직 중</span>
+      </div>
+      <p class="company-desc">공장 자동화 설비를 개발·구축하는 제조/엔지니어링 회사. 생산 설비와 운영 시스템이 유기적으로 연결되는 환경.</p>
+
+      <!-- COFAS -->
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">COFAS Pallet Inserter System Server</span>
+          <span class="project-period">2023.07 – 2023.10</span>
+        </div>
+        <div class="project-meta">
+          <span class="badge badge-gray">도메인 및 기능 개발</span>
+        </div>
+        <p class="project-overview">
+          러시아 수주 건으로, Pallet Inserter·Conveyor·Robot Stopper Arm·Pusher 등 산업용 기계를 통합 제어하는 실시간 설비 제어 서버를 개발하였습니다.
+        </p>
+        <ul class="task-list">
+          <li>
+            <p class="task-main">PLC 통신 기반 설비 제어 서버 설계 및 개발</p>
+            <ul class="sub-list">
+              <li>Spring Boot 기반으로 설비 제어 서버를 설계하고, PLC와 실시간 데이터 송수신을 처리하는 통신 구조 구현</li>
+              <li>FINS 프로토콜 기반 통신 모듈로 메모리 읽기/쓰기, 연결 상태 확인, 재연결 처리 등 PLC 연동 기능 개발</li>
+              <li>설비별 상태값과 제어 명령을 서버 내부 모델로 매핑하여 외부 API와 PLC 데이터 간 연계 담당</li>
+            </ul>
+          </li>
+          <li>
+            <p class="task-main">설비 상태 전이와 공정 흐름을 반영한 제어 로직 구현</p>
+            <ul class="sub-list">
+              <li>인서터·컨베이어·팔레트 이송 장치 등 설비 객체를 모델링하고, 공정 흐름에 맞는 상태 전이 및 제어 조건 로직 구현</li>
+              <li>수동/자동 제어를 분리하여 설비별 동작 조건, 연계 장비 제어, 초기화 및 예외 처리 로직 구성</li>
+            </ul>
+          </li>
+          <li>
+            <p class="task-main">통신 계층과 공정 제어 계층 분리를 통한 유지보수 구조 개선</p>
+            <ul class="sub-list">
+              <li>PLC 통신·데이터 해석·제어 판단·API 계층을 역할별 모듈로 분리하여 구조화</li>
+              <li>통신 프로토콜 변경 시 제어 로직 수정 없이 통신 모듈만 교체 가능한 구조 확보</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- WSA MES/ERP -->
+      <div class="project" id="project-mes">
+        <div class="project-header">
+          <span class="project-title">WSA MES/ERP 개발</span>
+          <span class="project-period">2024.03 – 2024.12</span>
+        </div>
+        <div class="project-meta">
+          <span class="badge badge-gray">MES 도메인 설계 및 멀티 모듈 기능 개발</span>
+        </div>
+        <p class="project-overview">
+          수주부터 설계·생산·출하까지 전반적인 업무 흐름을 관리하는 ERP/MES를 설계·개발하고, 운영 단계에서 신규 기능 개발과 레거시 구조 개선을 병행하였습니다.
+        </p>
+        <ul class="task-list">
+          <li>
+            <p class="task-main">영업·생산·재고·구매 멀티 모듈의 도메인 설계</p>
+            <ul class="sub-list">
+              <li>각 팀과 요구사항 미팅을 반복 진행하여 업무 프로세스를 파악하고 모듈별 서비스 경계를 정의</li>
+              <li>MSA를 초기 검토하였으나 개발 속도·데이터 정합성을 우선하여 단일 DB 기반 애플리케이션 레벨 모듈 분리 구조를 채택</li>
+            </ul>
+          </li>
+          <li>
+            <p class="task-main">생산 관리 ERP — 프로젝트·품목·공정·생산 흐름 기능 구현</p>
+            <ul class="sub-list">
+              <li>제품-하위부품 관계를 자기 참조 트리 구조로 설계하여 다단계 BOM을 표현</li>
+              <li>공정 템플릿 기반 라우팅과 생산 BOM 인스턴스로 유연한 작업 흐름 구현</li>
+            </ul>
+          </li>
+          <li>
+            <p class="task-main">구매 관리 ERP — 구매 요청 및 발주 흐름 기능 구현</p>
+            <ul class="sub-list">
+              <li>BOM 기준으로 구매 자재·필요 수량을 산출하는 QueryDSL 기반 조회 기능 구축</li>
+              <li>구매·재고 모듈 간 내부 서비스 동기 연계 및 예외 발생 시 Saga 패턴으로 데이터 정합성·원자성 보장</li>
+            </ul>
+          </li>
+          <li>
+            <p class="task-main">재고 관리 ERP — 재고 처리 기능 구현</p>
+            <ul class="sub-list">
+              <li>생산·구매·영업 모듈 공통 내부 서비스로 설계하여 입출고 이력 추적 구조 구현</li>
+              <li>동시 처리 시 음수 재고 발생 문제를 확인하고, 검증과 업데이트를 단일 쿼리로 처리하도록 개선</li>
+            </ul>
+          </li>
+          <li>
+            <p class="task-main">레거시 구조 개선</p>
+            <ul class="sub-list">
+              <li>기존 QueryParameter 기반 Specification/DB Path Builder 방식의 한계를 확인하고 QueryDSL 기반으로 전환</li>
+              <li>복잡한 동적 조회와 비즈니스 조건 처리를 유연하게 처리할 수 있는 구조로 개선</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- WSA MSA 인프라 -->
+      <div class="project" id="project-msa">
+        <div class="project-header">
+          <span class="project-title">WSA MSA 인프라 개발</span>
+          <span class="project-period">2025.02 – 2025.09</span>
+        </div>
+        <div class="project-meta">
+          <span class="badge badge-gray">아키텍처 설계 및 구축</span>
+          <span class="badge badge-gray">공통 인프라 개발</span>
+          <span class="badge badge-gray">파일럿 서비스 구축</span>
+        </div>
+        <p class="project-overview">
+          MES/ERP 운영 중 단일 DB 기반의 데이터 결합도 증가·확장성 한계를 경험하여 MSA 전환을 추진하였습니다.
+          즉각적인 전환보다 공통 인프라 구축을 우선하여 직원 관리·인증 서비스를 선행 구축하고, 연차 관리 시스템을 파일럿으로 선정하여 구조를 검증하였습니다.
+        </p>
+        <ul class="task-list">
+          <li>
+            <p class="task-main">서비스 간 데이터 동기화 구조 설계</p>
+            <ul class="sub-list">
+              <li>Redis 기반 이벤트 동기화를 직접 구현하였으나 다음과 같은 한계를 확인:
+                <ul class="sub-sub-list">
+                  <li>이벤트 처리 로직이 서비스별로 반복 구현되며 코드 복잡도 급격히 증가</li>
+                  <li>이벤트 유형별 분기 처리로 유지보수 비용 증가</li>
+                  <li>신규 서비스 추가 시 생산자·소비자 양쪽 모두 구현이 필요하여 확장성 저하</li>
+                </ul>
+              </li>
+              <li>Kafka를 도입하여 이벤트 기반 데이터 동기화 구조를 재설계:
+                <ul class="sub-sub-list">
+                  <li>Outbox 패턴으로 트랜잭션과 이벤트 발행의 원자성 보장</li>
+                  <li>eventId·action 기반 설계로 소비자가 독립적으로 처리 가능</li>
+                  <li>Inbox 패턴으로 중복 이벤트 처리 방지 (idempotency 확보)</li>
+                </ul>
+              </li>
+              <li>Spring Batch 기반 전체 데이터 동기화 구조도 설계 (Chunk 100 단위 API 읽기·가공·저장, DB 이관 활용 가능)</li>
+            </ul>
+          </li>
+          <li>
+            <p class="task-main">테스트 코드 구조 표준화</p>
+            <ul class="sub-list">
+              <li>팀 내 테스트 작성 기준 부재 문제를 해소하기 위해 MSA 인프라 설계 시 표준 구조를 함께 정립</li>
+              <li>DB·Kafka 등 실제 환경을 검증하는 통합 테스트를 우선하여 TestContainers 기반 구조로 표준화</li>
+              <li>각 API에 성공 1개·실패 1개 케이스 이상 작성을 기준으로 정하고, <code>@Valid</code> 검증은 Controller 테스트에서 함께 확인</li>
+            </ul>
+          </li>
+          <li>
+            <p class="task-main">파일럿 서비스를 통한 MSA 시스템 검증</p>
+            <ul class="sub-list">
+              <li>엑셀로만 처리되던 사내 연차 관리를 파일럿 서비스로 선정하여 구축</li>
+              <li>연도별 휴가 정보에 발생·사용 기록을 반영하는 방식으로 도메인을 설계</li>
+              <li>Kafka 기반 직원·부서 정보 동기화가 정상 동작하는 것을 파일럿 서비스를 통해 검증</li>
+            </ul>
+          </li>
+          <li>
+            <p class="task-main">GitHub Actions를 통한 배포 자동화</p>
+            <ul class="sub-list">
+              <li>Gitea/Jenkins 기반 프로젝트별 분산 구성을 GitHub Actions 기반으로 일괄 모듈화</li>
+              <li>QA: Push 시 자동 덮어쓰기 / Deploy: Blue/Green 방식 무중단 배포로 환경을 분리하여 구성</li>
+            </ul>
+          </li>
+          <li>
+            <p class="task-main">MSA 공통 인프라 라이브러리 설계 및 개발 (엔티티, 예외 처리, 로깅, DTO 등)</p>
+            <ul class="sub-list">
+              <li>각 서비스 공통 코드를 라이브러리로 추출하되, 상속·인터페이스·오버라이딩으로 서비스별 유연한 구성이 가능하도록 설계</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 사이드 프로젝트 ── -->
+  <section id="side">
+    <p class="section-title">사이드 프로젝트</p>
+    <div class="side-grid">
+
+      <div class="side-card">
+        <div class="side-card-top">
+          <div>
+            <span class="side-card-title">POUG</span>
+            <span class="side-card-period">2022.03 – 2022.04</span>
+          </div>
+          <div class="side-card-badges">
+            <span class="badge badge-gray">팀 프로젝트</span>
+            <span class="badge badge-gray">백엔드 개발</span>
+          </div>
+        </div>
+        <p class="side-card-desc">GitHub 기반 개발자 포트폴리오·프로젝트 작성/공유 서비스</p>
+        <ul class="side-card-tasks">
+          <li>카카오 로그인 API 구현 및 사용자 인증 흐름 구축</li>
+          <li>북마크·프로젝트 API 개발</li>
+          <li>GitHub Actions + Nginx + HTTPS 기반 무중단 배포 환경 구축</li>
+        </ul>
+        <div class="side-card-footer">
+          <div class="chip-wrap">
+            <span class="chip">Spring Boot</span>
+            <span class="chip">OAuth2</span>
+            <span class="chip">GitHub Actions</span>
+            <span class="chip">Nginx</span>
+          </div>
+          <div class="side-links">
+            <a href="https://github.com/h99-final/one-page-resume-BE" target="_blank">GitHub</a>
+            <a href="https://poug.me/" target="_blank">Live</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-card">
+        <div class="side-card-top">
+          <div>
+            <span class="side-card-title">PickBit</span>
+            <span class="side-card-period">진행 중</span>
+          </div>
+          <div class="side-card-badges">
+            <span class="badge badge-blue">개인 프로젝트</span>
+          </div>
+        </div>
+        <p class="side-card-desc">입찰·실시간 경쟁에 초점을 맞춘 경매 플랫폼</p>
+        <ul class="side-card-tasks">
+          <li>상품 등록·경매 생성·입찰·낙찰 처리까지 핵심 경매 흐름 설계</li>
+          <li>동시 입찰 상황에서도 정합성이 유지되도록 동시성 처리 구조 설계</li>
+        </ul>
+        <div class="side-card-footer">
+          <div class="chip-wrap">
+            <span class="chip">Spring Boot</span>
+            <span class="chip">Redis</span>
+            <span class="chip">WebSocket</span>
+          </div>
+          <div class="side-links">
+            <a href="https://github.com/pickbit-dev" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 학력 ── -->
+  <section id="education">
+    <p class="section-title">학력</p>
+    <div class="edu-header">
+      <span class="edu-school">백석대학교</span>
+      <span class="edu-period">2015.03 – 2021.02</span>
+    </div>
+    <div class="edu-meta">
+      <span class="badge badge-gray">컴퓨터공학부 학사</span>
+      <span class="badge badge-gray">졸업</span>
+      <span class="badge badge-blue">3.7 / 4.5</span>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
