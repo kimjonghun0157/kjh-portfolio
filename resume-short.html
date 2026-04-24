@@ -223,6 +223,31 @@
       font-weight: 500;
     }
 
+    .career-summary {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+    }
+
+    .career-summary th {
+      background: #f8f9fc;
+      color: #6b7280;
+      font-weight: 600;
+      text-align: left;
+      padding: 7px 12px;
+      border: 1px solid #e8eaf0;
+      font-size: 0.78rem;
+    }
+
+    .career-summary td {
+      padding: 7px 12px;
+      border: 1px solid #e8eaf0;
+      color: #374151;
+      vertical-align: top;
+    }
+
+    .career-summary tr:hover td { background: #fafbff; }
+
     .two-column {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
@@ -288,24 +313,10 @@
     <section>
       <p class="section-title">핵심 역량</p>
       <ul class="core-list">
-        <li>운영 환경에서 안정적으로 동작하는 자사 ERP 시스템 설계 및 개발</li>
+        <li>자사 B2B ERP/MES 전체 도메인(영업·생산·구매·재고) 설계 및 약 100개 API 구현</li>
         <li>Kafka, Outbox/Inbox 패턴 기반 서비스 간 데이터 동기화 구조 설계 경험</li>
         <li>배포 자동화와 공통 인프라 표준화를 통한 운영 효율 개선 경험</li>
       </ul>
-    </section>
-
-    <section>
-      <p class="section-title">기술 스택</p>
-      <div class="skill-grid">
-        <div class="skill-row"><span class="skill-label">Language</span><span class="skill-value">Java</span></div>
-        <div class="skill-row"><span class="skill-label">Framework</span><span class="skill-value">Spring Boot, Spring Data JPA, Spring Batch</span></div>
-        <div class="skill-row"><span class="skill-label">Database</span><span class="skill-value">MySQL, Redis</span></div>
-        <div class="skill-row"><span class="skill-label">ORM / Query</span><span class="skill-value">JPA, QueryDSL</span></div>
-        <div class="skill-row"><span class="skill-label">Messaging</span><span class="skill-value">Apache Kafka</span></div>
-        <div class="skill-row"><span class="skill-label">Infra</span><span class="skill-value">Docker, GitHub Actions, Nginx</span></div>
-        <div class="skill-row"><span class="skill-label">Monitoring</span><span class="skill-value">Elasticsearch, Logstash, Kibana</span></div>
-        <div class="skill-row"><span class="skill-label">Test</span><span class="skill-value">JUnit5, TestContainers</span></div>
-      </div>
     </section>
 
     <section>
@@ -323,12 +334,13 @@
             <span class="project-period">2025.02 ~ 2025.09</span>
           </div>
           <p class="project-role">MSA 전환 아키텍처 설계, 공통 서비스 개발, 파일럿 구축 · 9개 서비스 설계·구축</p>
-          <p class="project-summary">Kafka 기반 이벤트 동기화 구조를 설계하고, MSA 전환을 위한 직원 관리·인증 공통 서비스와 파일럿 서비스를 개발했으며, 통합 테스트 표준과 배포 자동화 체계를 구축했습니다.</p>
+          <p class="project-summary">Kafka Outbox/Inbox 패턴 기반 이벤트 동기화 구조를 설계하고, 인증·직원 관리·연차 서비스를 개발했습니다. 8개 서비스 배포를 GitHub Actions로 통합하고, TestContainers 기반 통합 테스트 표준화로 5개 서비스에서 약 400개 테스트 케이스를 작성했습니다.</p>
           <div class="chip-wrap">
             <span class="chip">Kafka</span>
             <span class="chip">Spring Batch</span>
             <span class="chip">GitHub Actions</span>
             <span class="chip">TestContainers</span>
+            <span class="chip">MongoDB</span>
           </div>
         </div>
 
@@ -338,7 +350,7 @@
             <span class="project-period">2024.03 ~ 2024.12</span>
           </div>
           <p class="project-role">도메인 설계 및 멀티 모듈 기능 개발 · 약 100개 API 설계·구현</p>
-          <p class="project-summary">영업, 생산, 재고, 구매 모듈의 서비스 경계를 정의하고 BOM, 발주, 재고 처리 등 핵심 업무 흐름을 설계·구현했습니다.</p>
+          <p class="project-summary">영업, 생산, 재고, 구매 모듈의 서비스 경계를 정의하고 BOM, 발주, 재고 처리 등 핵심 업무 흐름을 설계·구현했습니다. 동시 처리 시 음수 재고 발생 문제를 단일 쿼리 방식으로 해결해 운영 이후 발생 0건을 유지하고, Specification 기반 API 30~40개를 QueryDSL로 전환했습니다.</p>
           <div class="chip-wrap">
             <span class="chip">Spring Boot</span>
             <span class="chip">JPA</span>
